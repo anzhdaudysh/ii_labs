@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Моё приложение</h1>
+        
+        <div class="input-container">
+            <input type="text" id="inputText" placeholder="Введите текст">
+            <button onclick="processText()">Push</button>
+        </div>
+    
+        <div>
+            <h3>Результат первой функции:</h3>
+            <div class="result" id="result1"></div>
+        </div>
+        
+        <div>
+            <h3>Результат второй функции:</h3>
+            <div class="result" id="result2"></div>
+        </div>
+    </div>
+    
+
+</head>
+<body>
+
+
+<script>
+    // Заглушки для функций
+    function func1(text) {
+        return `Результат первой функции: ${text}`;
+    }
+
+    function func2(text) {
+        return `Результат второй функции: ${text}`;
+    }
+
+    // Функция обработки нажатия кнопки "push"
+    function processText() {
+        const inputText = document.getElementById('inputText').value;
+        
+        const result1 = func1(inputText);
+        const result2 = func2(inputText);
+
+        document.getElementById('result1').innerText = result1;
+        document.getElementById('result2').innerText = result2;
+    }
+</script>
+
+</body>
+</html>
